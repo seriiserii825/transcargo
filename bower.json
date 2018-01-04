@@ -16,7 +16,8 @@
   ],
   "devDependencies": {
     "jquery": "^3.2.1",
-    "jquery-smooth-scroll": "^2.2.0"
+    "jquery-smooth-scroll": "^2.2.0",
+    "wow": "wow.js#^1.1.2"
   },
   "dependencies": {
     "smoothscroll-for-websites": "^1.4.6"
