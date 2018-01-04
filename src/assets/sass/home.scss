@@ -1,0 +1,240 @@
+@import "../../../bourbon/bourbon";
+@import "../../../node_modules/bootstrap/scss/bootstrap-grid";
+@import "partials/variables";
+@import "partials/mixins";
+//@import "partials/icons";
+
+body {
+  @include opensans;
+
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: normal;
+  color: $text-color;
+  background-color: $body-bg;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a,
+a:focus,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.home-button {
+  @include inline-block;
+
+  display: table;
+  margin: 0 auto;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  color: inherit;
+  border: 2px solid $white;
+  transition: all .5s ease;
+
+  &:hover {
+    color: $white;
+    background-color: $accent;
+    border-color: $accent;
+  }
+
+  &.button-red {
+    padding: 15px 50px;
+    background: transparent;
+    border-color: $accent;
+
+    &:hover {
+      color: $white;
+      background-color: $accent;
+      border-color: $accent;
+    }
+  }
+}
+
+/*================== header ===========================*/
+.home-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("../i/home/paralax.jpg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header-center {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: $white;
+}
+
+.home-title {
+  margin-bottom: 50px;
+
+  @media screen and (max-width: $sm) {
+    font-size: 1.6em;
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: 1.2em;
+  }
+}
+
+/*================== main ===========================*/
+.home-main {
+  padding: 60px 0;
+  border-bottom: 2px solid #ccc;
+
+  .main-item {
+    margin-bottom: 60px;
+  }
+
+  .main-title {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-align: center;
+
+  }
+}
+
+.img-wrap {
+  position: relative;
+  display: table;
+  margin: 0 auto 40px;
+  width: 370px;
+  height: 314px;
+  background: url("../i/home/mac.png") no-repeat center;
+
+  @media screen and (max-width: 390px) {
+    margin-bottom: 20px;
+    width: 280px;
+    background-size: contain;
+  }
+
+  .img-inner {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    overflow: hidden;
+    width: 338px;
+    height: 213px;
+
+    @media screen and (max-width: 390px) {
+      top: 48px;
+      left: 11px;
+      width: 258px;
+      height: 166px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      img {
+        top: -200px
+      }
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transition: all 3.6s ease;
+  }
+}
+
+.home-buy {
+  padding: 60px 0;
+
+  .home-button {
+    padding: 15px 40px;
+    color: $white;
+    background: $accent;
+    border: 0;
+    transition: all .8s ease;
+
+    &:hover {
+      padding: 15px 60px;
+    }
+  }
+}
+
+.home-help {
+  padding: 60px 0;
+  text-align: center;
+  text-transform: uppercase;
+  background: #f6f6f6;
+}
+
+.home-support {
+  padding: 60px 0;
+  text-align: center;
+
+  @media screen and (max-width: $sm) {
+    display: table;
+    margin: 0 auto;
+  }
+
+  &__item {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    transition: all .5s ease;
+
+    @media screen and (max-width: $sm) {
+      display: block;
+      text-align: left;
+    }
+
+    &:first-child {
+      margin-right: 60px;
+
+      @media screen and (max-width: $sm) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    .fa {
+      position: relative;
+      top: 5px;
+      margin-right: 20px;
+      font-size: 30px;
+      color: $accent;
+    }
+  }
+}
+
+/* home-footer
+====================================================*/
+.home-footer {
+  padding: 60px 0;
+  text-align: center;
+  color: #9CC2B8;
+  background: #333333;
+
+  .fa {
+    color: red;
+  }
+}

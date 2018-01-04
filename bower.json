@@ -1,0 +1,24 @@
+{
+  "name": "bootstrap",
+  "main": "bootstrap.js",
+  "homepage": "https://github.com/seriiserii825/jeday-autoxoll",
+  "authors": [
+    "serii <seriiburduja@gmail.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.2.1",
+    "jquery-smooth-scroll": "^2.2.0"
+  },
+  "dependencies": {
+    "smoothscroll-for-websites": "^1.4.6"
+  }
+}
