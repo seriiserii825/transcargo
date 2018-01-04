@@ -1,1 +1,276 @@
 @import "../sass/partials/_start.scss";
+
+body {
+  @include roboto;
+
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: $text-color;
+  background: $white;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+.btn,
+a.btn {
+  @include monsseratbold;
+  @include inline-block;
+
+  padding: 0 42px;
+  height: 42px;
+  font-size: .8em;
+  line-height: 42px;
+  text-transform: uppercase;
+  color: $white;
+  background: $green;
+  border-right: 5px solid lighten($green, 5%);
+}
+
+/* header-top
+====================================================*/
+.header-top {
+  position: relative;
+  margin-bottom: 20px;
+  color: $white;
+  background: $white;
+  border-top: 6px solid $dark-bg;
+
+  @media screen and (max-width:  470px) {
+    background:  $dark-bg;
+  } 
+
+  &__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 42px;
+    background: $dark-bg;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -42px;
+      width: 0;
+      height: 0;
+      border: 42px solid transparent;
+      border-top-color:  $dark-bg; 
+    }
+  }
+
+  .info {
+    padding: 8px 0 14px;
+
+    @media screen and (max-width: $md) {
+      text-align: right;
+    }
+
+    &__item {
+      @include inline-block;
+    }
+
+    &__item:last-child .info__link {
+      border-right: 0;
+    }
+
+    &__link {
+      display: block;
+      padding: 0 14px;
+      text-transform: uppercase;
+      color: inherit;
+      border-right: 2px solid $gray;
+
+      @media screen and (max-width: $lg) {
+        font-size: .75em;
+      }
+    }
+  }
+
+  .socials {
+    padding: 8px 0 14px;
+    text-align: right;
+  }
+
+  .social-item {
+    @include inline-block;
+  }
+
+  .social-link {
+    display: block;
+    padding: 0 5px;
+    color:  $gray;
+  }
+}
+
+/*
+header-content 
+===========================*/
+.header-content {
+  .logo {
+    display: flex;
+
+    @media screen and (max-width: $md) {
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width:  370px) {
+      display: block;   
+    }
+
+    .img-wrap {
+      @media screen and (max-width:  370px) {
+        margin-bottom: 15px;
+        text-align: center;
+      }
+    }
+
+    .logo-content {
+      @media screen and (max-width:  370px) {
+          text-align: center;
+      }
+    }
+
+  }
+
+  .img-wrap {
+    margin-right: 10px;
+
+    @media screen and (max-width:  370px) {
+      margin-right:  0;
+    }
+
+    @media screen and (max-width:  350px) {
+      margin-right:  -14px;
+    }
+  }
+
+  .logo-title {
+    @include monsseratbold;
+    
+    margin-top: -4px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-transform: uppercase;
+
+    .accent {
+      color: $accent;
+    }
+  }
+
+
+  .logo-text {
+    font-size: .9em;
+    color: $gray;
+  }
+
+  .header-contacts {
+    text-align: right;
+
+
+    &__item {
+      @include inline-block;
+
+      padding: 0 15px;
+      text-align: left;
+      border-left: 2px solid #f0f0f0;
+
+      @media screen and (max-width:  $lg) {
+        padding: 0 5px;
+      }
+
+      @media screen and (max-width:  540px) {
+        border: 0;
+        margin-bottom: 25px;
+        width: 48%;
+        text-align: center;
+      }
+
+      &:first-child {
+        border-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+        border-left: 0;
+      }
+
+      .contacts-title {
+        font-size: .8em;
+        text-transform: uppercase;
+        color: $gray;
+      }
+
+      .contacts-text {
+        font-size: .8em;
+        font-weight: bold;
+        color: black;
+      }
+
+      .block,
+      .img-wrap {
+        @include inline-block;
+
+        .fa {
+          color: $green;
+        }
+      }
+
+      .box {
+        @include inline-block;
+
+        width: 34px;
+        height: 34px;
+        text-align: center;
+        border: 2px solid #dbdbdb;
+
+        a {
+          color: inherit;
+        }
+
+        .fa {
+          line-height: 32px;
+        }
+
+      }
+
+      .box-left {
+        margin-right: -4px;
+        border-right: 0;
+      }
+
+      .box-right{
+        color: $white;
+        background: $green;
+        border-left: 0;
+        border-color: $green;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,3 @@
-
 /* fonts
 ====================================================*/
 @mixin opensans {
@@ -9,9 +8,9 @@
   font-family: "OpenSansBold", sans-serif;
 }*/
 
-/* @mixin roboto {
+@mixin roboto {
   font-family: "RobotoRegular", sans-serif;
-} */
+}
 
 /* @mixin robotobold {
   font-family: "RobotoBold", sans-serif;
@@ -32,6 +31,10 @@
 /* @mixin cleanvertisinglight {
   font-family: "CleanvertisingLight", sans-serif;
 } */
+
+@mixin monsseratbold {
+  font-family: "MonserratBold", sans-serif;
+}
 
 /*mixins*/
 @mixin inline-block {

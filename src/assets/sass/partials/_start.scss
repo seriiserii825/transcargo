@@ -1,20 +1,10 @@
 @import "../../../bourbon/bourbon";
 @import "../sass/partials/fonts";
-@import "../sass/partials/iconmoon";
+//@import "../sass/partials/iconmoon";
 @import "../../../node_modules/bootstrap/scss/bootstrap-grid";
 @import "../sass/partials/variables";
 @import "../sass/partials/mixins";
 //@import "../sass/partials/icons";
-
-body {
-  //@include roboto;
-
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: normal;
-  color: $text-color;
-  background-color: $body-bg;
-}
 
 ul {
   margin: 0;
@@ -28,5 +18,5 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
+  margin: 0;
 }
