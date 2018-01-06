@@ -90,6 +90,10 @@ a.btn {
       @media screen and (max-width: $lg) {
         font-size: .75em;
       }
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -106,6 +110,11 @@ a.btn {
     display: block;
     padding: 0 5px;
     color:  $gray;
+    transition: all .5s ease;
+
+    &:hover {
+      color: $white;
+    }
   }
 }
 
@@ -134,7 +143,7 @@ header-content
 
     .logo-content {
       @media screen and (max-width:  370px) {
-          text-align: center;
+        text-align: center;
       }
     }
 
@@ -172,6 +181,8 @@ header-content
   }
 
   .header-contacts {
+    margin-top: 35px;
+    margin-bottom: 35px;
     text-align: right;
 
 
@@ -256,6 +267,94 @@ header-content
   }
 }
 
+/*=====================================
+=            header-bottom            =
+=====================================*/
+.header-bottom {
+  position: relative;
+
+/*header-bottom__line 
+===========================*/
+&__line {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 92%;
+  height: 66px;
+  background: $accent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -66px;
+    left: -66px;
+    border: 66px solid transparent;
+    border-bottom-color:  $accent;
+  }
+}
+}
+
+.header-menu {
+  padding: 20px 0;
+
+  &__item {
+    @include inline-block;
+
+    &.active .header-menu__link:before {
+      left: 50%;
+      opacity: 1;
+    }
+
+    &:first-child .header-menu__link {
+      padding-left:  0;
+
+      &:before {
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+    
+    &:last-child .header-menu__link {
+      border-right: 0;
+    }
+
+  }
+
+  &__link {
+    @include inline-block;
+    @include monsseratbold;
+    
+    position: relative;
+    padding: 0 30px;
+    text-transform: uppercase;
+    color: $white;
+    border-right: 1px solid #cb7369;
+    overflow: hidden;
+
+    &:hover:before,{
+      left: 50%;
+      opacity: 1;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60%;
+      height: 2px;
+      background: $white;
+      transform: translateX(-50%);
+      transition: all .8s ease;
+      opacity: 0;
+    }
+  }
+
+}
+
+/*=====  End of header-bottom  ======*/
 
 
 
