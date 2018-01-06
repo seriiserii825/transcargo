@@ -46,6 +46,12 @@ $(function(){
 
         $('#js-header-menu').slideToggle();
     });
-    
+
+    /*----------  slick  ----------*/
+    $('#js-home-slider').slick({
+        dots: true
+    });
+
+
 
 });
