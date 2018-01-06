@@ -4,6 +4,7 @@ body {
   @include roboto;
 
   margin: 0;
+  margin-bottom: 200px;
   padding: 0;
   font-size: 16px;
   color: $text-color;
@@ -122,6 +123,8 @@ a.btn {
 header-content 
 ===========================*/
 .header-content {
+  margin-bottom: 35px;
+
   .logo {
     display: flex;
 
@@ -182,7 +185,6 @@ header-content
 
   .header-contacts {
     margin-top: 35px;
-    margin-bottom: 35px;
     text-align: right;
 
 
@@ -283,6 +285,14 @@ header-content
   height: 66px;
   background: $accent;
 
+  @media screen and (max-width: $md) {
+    display: none;
+  }
+
+  @media screen and (min-width: $md) {
+    display: block;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -296,11 +306,65 @@ header-content
 }
 }
 
+/*----------  header-navbar  ----------*/
+.header-navbar {
+  font-size: 1.5em;
+  line-height: 66px;
+  color: $white;
+  text-align: center;
+  text-transform: uppercase;
+  height: 66px;
+  background: $accent;
+
+  @media screen and (max-width: $md) {
+    display: block;
+  }
+
+  @media screen and (min-width: $md) {
+    display: none;
+  }
+
+  .navbar-button {
+    @include inline-block;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    float: right;
+    margin-top: 24px;
+    width: 30px;
+    height: 18px;
+
+    div {
+      height: 2px;
+      background: $white;
+    }
+  }
+}
+
+
+/*----------  header-menu  ----------*/
+.header-menu-wrap {
+  @media screen and (max-width: $md) {
+    background: $accent;
+  }
+}
+
 .header-menu {
   padding: 20px 0;
+  text-align: right;
+
+  @media screen and (min-width: $md) {
+    display: block !important;
+  }
 
   &__item {
     @include inline-block;
+
+    @media screen and (max-width: $md) {
+      display: block;
+      text-align: left;
+    }
 
     &.active .header-menu__link:before {
       left: 50%;
@@ -325,6 +389,7 @@ header-content
   &__link {
     @include inline-block;
     @include monsseratbold;
+    font-size: em(13);
     
     position: relative;
     padding: 0 30px;
@@ -332,6 +397,16 @@ header-content
     color: $white;
     border-right: 1px solid #cb7369;
     overflow: hidden;
+
+    @media screen and (max-width: $lg) {
+      padding: 0 25px;
+    }
+
+    @media screen and (max-width: $md) {
+      padding: 0;
+      line-height: 3;
+      border: 0;
+    }
 
     &:hover:before,{
       left: 50%;
@@ -349,6 +424,10 @@ header-content
       transform: translateX(-50%);
       transition: all .8s ease;
       opacity: 0;
+
+      @media screen and (max-width: $md) {
+        background:  none;
+      }
     }
   }
 

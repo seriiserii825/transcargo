@@ -40,4 +40,12 @@ $(function(){
     );
     wow.init();
 
+    /*----------  Toggle header- menu  ----------*/
+    $('#js-navbar-button').on('click', function(e){
+        e.preventDefault();
+
+        $('#js-header-menu').slideToggle();
+    });
+    
+
 });
