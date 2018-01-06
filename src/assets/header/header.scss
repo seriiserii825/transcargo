@@ -4,6 +4,7 @@ body {
   @include roboto;
 
   margin: 0;
+  margin-bottom: 200px;
   padding: 0;
   font-size: 16px;
   color: $text-color;
@@ -90,6 +91,10 @@ a.btn {
       @media screen and (max-width: $lg) {
         font-size: .75em;
       }
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -106,6 +111,11 @@ a.btn {
     display: block;
     padding: 0 5px;
     color:  $gray;
+    transition: all .5s ease;
+
+    &:hover {
+      color: $white;
+    }
   }
 }
 
@@ -113,6 +123,8 @@ a.btn {
 header-content 
 ===========================*/
 .header-content {
+  margin-bottom: 35px;
+
   .logo {
     display: flex;
 
@@ -134,7 +146,7 @@ header-content
 
     .logo-content {
       @media screen and (max-width:  370px) {
-          text-align: center;
+        text-align: center;
       }
     }
 
@@ -172,6 +184,7 @@ header-content
   }
 
   .header-contacts {
+    margin-top: 35px;
     text-align: right;
 
 
@@ -256,6 +269,171 @@ header-content
   }
 }
 
+/*=====================================
+=            header-bottom            =
+=====================================*/
+.header-bottom {
+  position: relative;
+
+/*header-bottom__line 
+===========================*/
+&__line {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 92%;
+  height: 66px;
+  background: $accent;
+
+  @media screen and (max-width: $md) {
+    display: none;
+  }
+
+  @media screen and (min-width: $md) {
+    display: block;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -66px;
+    left: -66px;
+    border: 66px solid transparent;
+    border-bottom-color:  $accent;
+  }
+}
+}
+
+/*----------  header-navbar  ----------*/
+.header-navbar {
+  font-size: 1.5em;
+  line-height: 66px;
+  color: $white;
+  text-align: center;
+  text-transform: uppercase;
+  height: 66px;
+  background: $accent;
+
+  @media screen and (max-width: $md) {
+    display: block;
+  }
+
+  @media screen and (min-width: $md) {
+    display: none;
+  }
+
+  .navbar-button {
+    @include inline-block;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    float: right;
+    margin-top: 24px;
+    width: 30px;
+    height: 18px;
+
+    div {
+      height: 2px;
+      background: $white;
+    }
+  }
+}
+
+
+/*----------  header-menu  ----------*/
+.header-menu-wrap {
+  @media screen and (max-width: $md) {
+    background: $accent;
+  }
+}
+
+.header-menu {
+  padding: 20px 0;
+  text-align: right;
+
+  @media screen and (min-width: $md) {
+    display: block !important;
+  }
+
+  &__item {
+    @include inline-block;
+
+    @media screen and (max-width: $md) {
+      display: block;
+      text-align: left;
+    }
+
+    &.active .header-menu__link:before {
+      left: 50%;
+      opacity: 1;
+    }
+
+    &:first-child .header-menu__link {
+      padding-left:  0;
+
+      &:before {
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+    
+    &:last-child .header-menu__link {
+      border-right: 0;
+    }
+
+  }
+
+  &__link {
+    @include inline-block;
+    @include monsseratbold;
+    font-size: em(13);
+    
+    position: relative;
+    padding: 0 30px;
+    text-transform: uppercase;
+    color: $white;
+    border-right: 1px solid #cb7369;
+    overflow: hidden;
+
+    @media screen and (max-width: $lg) {
+      padding: 0 25px;
+    }
+
+    @media screen and (max-width: $md) {
+      padding: 0;
+      line-height: 3;
+      border: 0;
+    }
+
+    &:hover:before,{
+      left: 50%;
+      opacity: 1;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60%;
+      height: 2px;
+      background: $white;
+      transform: translateX(-50%);
+      transition: all .8s ease;
+      opacity: 0;
+
+      @media screen and (max-width: $md) {
+        background:  none;
+      }
+    }
+  }
+
+}
+
+/*=====  End of header-bottom  ======*/
 
 
 
