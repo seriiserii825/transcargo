@@ -49,7 +49,11 @@ $(function(){
 
     /*----------  slick  ----------*/
     $('#js-home-slider').slick({
-        dots: true
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        speed: 1500,
+        cssEase: 'ease'
     });
 
 
