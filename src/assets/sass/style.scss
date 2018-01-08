@@ -1,5 +1,6 @@
 @import "../sass/partials/_start.scss";
 @import "../libs/slick/slick";
+@import "partials/iconmoon";
 
 body {
   @include roboto;
@@ -19,23 +20,103 @@ a:active {
   text-decoration: none;
 }
 
-.btn,
-a.btn {
+.btn-wrap {
+  .btn,
+  a.btn {
+    @include monsseratbold;
+    @include inline-block;
+
+    position: relative;
+    padding: 0 42px;
+    height: 42px;
+    font-size: .8em;
+    line-height: 42px;
+    text-transform: uppercase;
+    color: $white;
+    background: $green;
+    border: 1px solid transparent;
+    border-right: none;
+    transition: all .6s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -1px;
+      bottom: -1px;
+      right: 0;
+      width: 5px;
+      background: lighten($green, 5%);
+    }
+
+    &:hover {
+      background: lighten($green, 5%);
+    }
+  }
+  &.red {
+    a.btn,
+    .btn {
+      color: $text-gray;
+      background: $white;
+      border: 1px solid #eee;
+      border-right: none;
+
+      &::after {
+        content: '';
+        background: $accent;
+      }
+
+      &:hover {
+        color: $white;
+        background: $accent;
+      }
+    }
+  }
+
+  &.white {
+    a.btn,
+    .btn {
+      color: $white;
+      background: transparent;
+      border: 1px solid $white;
+      border-right: none;
+
+      &::after {
+        background: $white;
+      }
+
+      &:hover {
+        color: $green;
+        background: $white;
+      }
+    }
+  }
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.title {
   @include monsseratbold;
-  @include inline-block;
 
-  padding: 0 42px;
-  height: 42px;
-  font-size: .8em;
-  line-height: 42px;
+  font-size: em(24);
   text-transform: uppercase;
-  color: $white;
-  background: $green;
-  border-right: 5px solid lighten($green, 5%);
-  transition: all .6s ease;
 
-  &:hover {
-    background: lighten($green, 5%);
+  &.title__small {
+    font-size: em(14);
+  }
+}
+
+.s_dark {
+
+  .title {
+    color: $white;
   }
 }
 
@@ -65,7 +146,7 @@ a.btn {
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0,0,0,.6);
+      background: rgba(0, 0, 0, .6);
     }
   }
 
@@ -119,4 +200,205 @@ a.btn {
   }
 }
 
-/*=====  End of home.html  ======*/
+/* delivery
+====================================================*/
+.delivery {
+  .col-md-4:last-child {
+    .btn {
+      @media screen and (max-width: $md) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .img-wrap {
+    margin-bottom: 40px;
+  }
+
+  .title {
+    margin-bottom: 26px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-size: em(13);
+    line-height: 1.8;
+    color: $text-light-color;
+  }
+
+  .btn {
+    @media screen and (max-width: $md) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+/* end delivery
+====================================================*/
+
+/* free-quote
+====================================================*/
+.free-quote {
+  color: $white;
+
+  &__outer {
+    position: relative;
+    padding: 0 50px;
+    overflow: hidden;
+
+    @media screen and (max-width: $sm) {
+      padding: 0 10px;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border: 170px solid transparent;
+
+      @media screen and (max-width: $lg) {
+        display: none;
+      }
+    }
+
+    &::before {
+      left: -170px;
+      border-right-color: $green;
+      border-right-width: 50px;
+    }
+
+    &::after {
+      right: -170px;
+      border-left-color: $green;
+      border-left-width: 50px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+    background: $green;
+
+    @media screen and (max-width: $lg) {
+      display: block;
+    }
+  }
+
+  .left-block {
+    max-width: 650px;
+
+    @media screen and (max-width: $xl) {
+      max-width: 550px;
+    }
+  }
+
+  .right-block {
+    max-width: 240px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    margin: 0;
+
+    @media screen and (max-width: $lg) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .btn-wrap {
+    .btn {
+      padding: 0 20px;
+
+      @media screen and (max-width: 325px) {
+        padding: 0 15px;
+      }
+    }
+  }
+}
+
+/* end free-quote
+====================================================*/
+
+/* home-services
+====================================================*/
+.home-services {
+  &__header {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .title {
+    margin-bottom: 25px;
+  }
+
+  &__title-description {
+    @include inline-block;
+
+    max-width: 420px;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 44px;
+    padding-left: 110px;
+    border: 1px solid #eee;
+    border-right-width: 3px;
+    border-right-color: #ddd;
+
+    .img-wrap {
+      position: absolute;
+      top: 50%;
+      left: -20px;
+      width: 80px;
+      height: 70px;
+      text-align: center;
+      transform: translateY(-50%);
+      background: url("../i/home/icon-bg.svg") no-repeat center;
+      background-size: cover;
+      transition: all .8s ease;
+
+      @media screen and (max-width: $sm) {
+        left: 0;
+      }
+
+      &:hover {
+        background-image: url("../i/home/icon-bg-red.svg");
+        cursor: pointer;
+
+        span {
+          &::before {
+            color: $white;
+          }
+        }
+      }
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        font-size: 36px;
+        transform: translate(-50%, -50%);
+
+        &::before {
+          color: #555;
+        }
+      }
+    }
+  }
+}
+
+/* end home-services
+====================================================*/
