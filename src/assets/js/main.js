@@ -66,7 +66,7 @@ $(function(){
         speed: 1500,
         cssEase: 'ease',
         slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToScroll: 2,
         arrows: true,
         responsive: [
             {
@@ -75,7 +75,7 @@ $(function(){
                     centerMode: true,
                     centerPadding: '40px',
                     slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToScroll: 2,
                 }
             },
             {
@@ -97,5 +97,38 @@ $(function(){
         ]
     });
 
+    /* js-why-us-slider
+    ====================================================*/
+    $('#js-why-us-slider').slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        speed: 1000
+    });
+
+    /* why-us__accordeon
+    ====================================================*/
+    $(".js-accordeon-title").on("click", function(e) {
+
+        e.preventDefault();
+        let $this = $(this),
+            attr = $this.attr("href");
+
+        if( $this.hasClass("active") ) {
+            $(".js-accordeon-content").slideUp();
+            $(".js-accordeon-title").removeClass("active");
+            $(attr).slideUp();
+            $this.find('.fa').removeClass('fa-minus').addClass('fa-plus');
+        }else{
+            $this.addClass("active");
+            $(".js-accordeon-content").slideUp();
+            $(".js-accordeon-title").find('.fa').removeClass('fa-minus').addClass('fa-plus');
+            $(attr).slideDown();
+            $this.find('.fa').removeClass('fa-plus').addClass('fa-minus');
+        }
+
+        /*if($this.hasClass("active")){
+            $this.find('.fa').removeClass('fa-minus').addClass('fa-plus');
+        }*/
+    })
 
 });
