@@ -114,6 +114,8 @@ img {
 }
 
 .s_dark {
+  color: $white;
+  background: $dark-bg;
 
   .title {
     color: $white;
@@ -401,4 +403,97 @@ img {
 }
 
 /* end home-services
+====================================================*/
+
+/* fleets-gallery
+====================================================*/
+.fleets-gallery {
+  position: relative;
+  background-image: url("../i/home/fleets-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .8);
+  }
+
+  &__header {
+    position: relative;
+    margin-bottom: 65px;
+    text-align: center;
+    z-index: 1002;
+
+    .title {
+      margin-bottom: 20px;
+    }
+
+    &-subtitle {
+      color: $text-gray;
+      text-transform: uppercase;
+    }
+  }
+
+  .fleets-slider {
+    height: 180px;
+
+    .img-wrap {
+      height: 136px;
+      overflow: hidden;
+    }
+
+    img {
+      padding: 0 15px;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .slick-arrow {
+    top: -40px;
+    width: 50px;
+    height: 32px;
+    border: 2px solid $gray;
+    transition: all .8s ease;
+
+    &:hover {
+      background: #222;
+    }
+  }
+
+  .slick-prev::after,
+  .slick-next::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'FontAwesome', sans-serif;
+    color: $gray;
+    font-size: 20px;
+  }
+
+  .slick-prev {
+    left: auto;
+    right: 48px;
+
+    &::after {
+      content: "\f053";
+    }
+  }
+
+  .slick-next {
+    right: 0;
+
+    &::after {
+      content: "\f054";
+    }
+  }
+}
+
+/* end fleets-gallery
 ====================================================*/
