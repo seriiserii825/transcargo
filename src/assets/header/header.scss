@@ -44,7 +44,7 @@ a.btn {
 
   @media screen and (max-width:  470px) {
     background:  $dark-bg;
-  } 
+  }
 
   &__content {
     position: absolute;
@@ -62,7 +62,7 @@ a.btn {
       width: 0;
       height: 0;
       border: 42px solid transparent;
-      border-top-color:  $dark-bg; 
+      border-top-color:  $dark-bg;
     }
   }
 
@@ -98,29 +98,38 @@ a.btn {
     }
   }
 
-  .socials {
+  .header-socials {
     padding: 8px 0 14px;
     text-align: right;
-  }
 
-  .social-item {
-    @include inline-block;
-  }
+    @media screen and (max-width: 780px) {
+      justify-content: flex-end;
+    }
 
-  .social-link {
-    display: block;
-    padding: 0 5px;
-    color:  $gray;
-    transition: all .5s ease;
+    .social-item {
+      @include inline-block;
+    }
 
-    &:hover {
-      color: $white;
+    .social-link {
+      display: block;
+      padding: 0 5px;
+      color:  $gray;
+      transition: all .5s ease;
+
+      .fa {
+        color: inherit;
+      }
+
+      &:hover {
+        color: $white;
+      }
     }
   }
+
 }
 
 /*
-header-content 
+header-content
 ===========================*/
 .header-content {
   margin-bottom: 35px;
@@ -134,7 +143,7 @@ header-content
     }
 
     @media screen and (max-width:  370px) {
-      display: block;   
+      display: block;
     }
 
     .img-wrap {
@@ -166,7 +175,7 @@ header-content
 
   .logo-title {
     @include monsseratbold;
-    
+
     margin-top: -4px;
     font-size: 1.4em;
     font-weight: normal;
@@ -275,7 +284,7 @@ header-content
 .header-bottom {
   position: relative;
 
-/*header-bottom__line 
+/*header-bottom__line
 ===========================*/
 &__line {
   position: absolute;
@@ -326,7 +335,7 @@ header-content
 
   .navbar-button {
     @include inline-block;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -379,7 +388,7 @@ header-content
         transform: translateX(0);
       }
     }
-    
+
     &:last-child .header-menu__link {
       border-right: 0;
     }
@@ -390,7 +399,7 @@ header-content
     @include inline-block;
     @include monsseratbold;
     font-size: em(13);
-    
+
     position: relative;
     padding: 0 30px;
     text-transform: uppercase;
@@ -408,7 +417,7 @@ header-content
       border: 0;
     }
 
-    &:hover:before,{
+    &:hover:before{
       left: 50%;
       opacity: 1;
     }

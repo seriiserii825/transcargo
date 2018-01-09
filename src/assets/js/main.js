@@ -125,10 +125,14 @@ $(function(){
             $(attr).slideDown();
             $this.find('.fa').removeClass('fa-plus').addClass('fa-minus');
         }
-
-        /*if($this.hasClass("active")){
-            $this.find('.fa').removeClass('fa-minus').addClass('fa-plus');
-        }*/
     })
+
+    /* scroll to top
+    ====================================================*/
+    $('#js-up').on('click', function(){
+        $('html, body').animate({
+            scrollTop: 0
+        }, 3000);
+    });
 
 });
