@@ -26,6 +26,13 @@ button:hover {
   outline: none;
 }
 
+input,
+input:focus,
+input:hover,
+input:active{
+  outline: none;
+}
+
 .btn-wrap {
   .btn,
   a.btn {
@@ -128,6 +135,12 @@ img {
   color: $text-gray;
 }
 
+.text {
+  font-size: em(13);
+  line-height: 1.8;
+  color: $text-light-color;
+}
+
 .s_dark {
   color: $white;
   background: $dark-bg;
@@ -206,6 +219,10 @@ img {
 
 .main {
   padding-top: 80px;
+
+  &.home {
+    padding-top: 0;
+  }
 }
 
 /*=================================
@@ -973,8 +990,9 @@ img {
     z-index: 2;
   }
 
-  &__title {
+  &__title.title {
     position: relative;
+    text-align: left;
     color: $white;
     z-index: 3;
   }
@@ -1046,17 +1064,19 @@ img {
 
 /* about-us
 ====================================================*/
-.title,
-.subtitle {
-  text-align: center;
-}
+.about-us {
+  .title,
+  .subtitle {
+    text-align: center;
+  }
 
-.title {
-  margin-bottom: 40px;
-}
+  .title {
+    margin-bottom: 40px;
+  }
 
-.subtitle {
-  margin-bottom: 12px;
+  .subtitle {
+    margin-bottom: 12px;
+  }
 }
 
 .about-us-tabs {
@@ -1150,6 +1170,292 @@ img {
 /* end about-us
 ====================================================*/
 
+/* latest news page
+====================================================*/
+.news-sidebar {
+  .title {
+    font-size: 1em;
+  }
+}
+
+.latest-news-page {
+  .block {
+    margin-bottom: 60px;
+  }
+
+  .img-wrap {
+    margin-bottom: 15px;
+    max-width: 850px;
+  }
+
+  .description {
+    margin-bottom: 60px;
+    padding: 16px 0;
+    border: 1px solid #eee;
+    border-bottom-width: 3px;
+    border-bottom-color: $accent;
+
+    &__item {
+      @include inline-block;
+
+      padding: 0 20px;
+      font-size: em(11);
+      text-transform: uppercase;
+      color: $text-gray;
+      border-right: 1px solid #ddd;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: 25px;
+  }
+
+  .text {
+    margin-bottom: 45px;
+  }
+
+  .btn-wrap {
+    margin-bottom: 90px;
+  }
+
+  .search {
+    position: relative;
+    margin-bottom: 50px;
+
+    @media screen and (max-width: $lg) {
+      max-width: 400px;
+    }
+
+    &-input {
+      display: block;
+      width: 100%;
+      height: 52px;
+      font-size: em(13);
+      text-indent: 20px;
+      color: #999;
+      background-color: $bg-light;
+      border: 2px solid #ddd;
+      border-right-width: 5px;
+    }
+
+    .fa {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .news-categories {
+    @media screen and (max-width: $lg) {
+      max-width: 400px;
+    }
+
+    &__item {
+      margin-bottom: 10px;
+    }
+
+    &__link {
+      position: relative;
+      display: block;
+      padding: 20px 30px;
+      font-size: em(13);
+      color: $text-color;
+      border: 1px solid #eee;
+      transition: all .6s ease;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: $green;
+      }
+
+      &:hover {
+        color: $white;
+        background: $accent;
+
+        &::before {
+          background: lighten($accent, 20%);
+        }
+      }
+    }
+  }
+
+  .recent-post {
+    &__item {
+      display: flex;
+    }
+
+    &__content {
+      padding: 7px 20px;
+      font-size: em(14);
+    }
+
+    &__time {
+      font-size: em(11);
+      text-transform: uppercase;
+      color: $text-gray;
+    }
+  }
+
+  .tags {
+    &__item {
+      @include inline-block;
+
+      margin: 4px;
+
+      &.active,
+      &:hover {
+        .tags__link {
+          color: $white;
+          background: $accent;
+          border-color: $accent;
+        }
+      }
+    }
+
+    &__link {
+      display: block;
+      padding: 12px 16px;
+      font-size: em(11);
+      text-transform: uppercase;
+      color: $text-color;
+      background: #f4f4f4;
+      border: 1px solid #eee;
+      transition: all .6s ease;
+    }
+  }
+
+  .twitter-list {
+    &__item {
+      padding: 25px 0;
+      border-bottom: 1px solid #eee;
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+
+    &__content {
+      position: relative;
+      padding-left: 25px;
+
+      .text {
+        margin-bottom: 10px;
+      }
+    }
+
+    .fa {
+      position: absolute;
+      top: 14px;
+      left: 0;
+      color: $green;
+      transform: translateY(-50%);
+    }
+
+    &__time {
+      font-size: em(11);
+      color: $accent;
+    }
+  }
+}
+/* end latest news
+====================================================*/
+
+/* shop
+====================================================*/
+.shop-content {
+  &__item {
+    margin-bottom: 100px;
+  }
+}
+
+.features {
+  &__item {
+    margin-bottom: 100px;
+  }
+
+  .img-wrap {
+    position: relative;
+    margin-bottom: 45px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: -2px;
+      width: 100px;
+      height: 50px;
+      background: url("../i/shop/feature-img-icon.svg") no-repeat center;
+    }
+  }
+
+  .text {
+    margin-bottom: 40px;
+  }
+}
+
+.free-quote {
+  margin-bottom: 100px;
+}
+
+.team {
+  .title,
+  .subtitle {
+    text-align: center;
+  }
+
+  .subtitle {
+    margin-bottom: 60px;
+  }
+
+  .position {
+    @include monsseratbold;
+
+    margin-bottom: 6px;
+    font-size: em(13);
+    text-align: center;
+    color: $text-gray;
+  }
+
+  .title__small {
+    margin-bottom: 30px;
+  }
+
+  .text {
+    margin-bottom: 100px;
+  }
+}
+
+
+.shop {
+  .fleets-gallery {
+    margin-bottom: 100px;
+  }
+
+  &.main {
+    padding-bottom: 40px;
+  }
+
+  .btn-wrap .btn {
+    @media screen and (max-width: 360px) {
+      padding: 6px 16px;
+      line-height: 1.2;
+    }
+  }
+}
+
+/* end shop
+====================================================*/
+
 /* footer-main
 ====================================================*/
 .footer-main {
@@ -1201,6 +1507,7 @@ img {
     margin-bottom: 30px;
     font-size: em(14);
     line-height: 1.6;
+    color: $white;
   }
 
   .btn-wrap.white {
