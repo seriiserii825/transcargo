@@ -135,4 +135,12 @@ $(function(){
         }, 3000);
     });
 
+    /* about-us tabs
+    ====================================================*/
+    $("#js-about-us-tabs .tab_item").not(":first").hide();
+    $("#js-about-us-tabs .wrapper .tab").click(function() {
+        $("#js-about-us-tabs .wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
+        $("#js-about-us-tabs .tab_item").hide().eq($(this).index()).fadeIn()
+    }).eq(0).addClass("active");
+
 });
