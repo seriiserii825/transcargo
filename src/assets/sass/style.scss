@@ -204,6 +204,10 @@ img {
   }
 }
 
+.main {
+  padding-top: 80px;
+}
+
 /*=================================
 =            home.html            =
 =================================*/
@@ -230,7 +234,7 @@ img {
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, .6);
+      background: rgba(0, 0, 0, .4);
     }
   }
 
@@ -944,6 +948,103 @@ img {
 /* end partners
 ====================================================*/
 
+/* our-services
+====================================================*/
+.our-services {
+
+}
+
+.page-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 150px;
+  background-position: top center;
+  background-size: cover;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 2;
+  }
+
+  &__title {
+    position: relative;
+    color: $white;
+    z-index: 3;
+  }
+}
+
+.categories {
+  .category-item {
+    &:hover {
+      .category-link {
+        color: $white;
+        background: $green;
+        border-right-color: lighten($green, 20%);
+      }
+    }
+  }
+
+  .category-link {
+    @include monsseratbold;
+
+    display: block;
+    margin-bottom: 6px;
+    padding: 25px 35px;
+    font-size: em(12);
+    text-transform: uppercase;
+    color: inherit;
+    background: $bg-light;
+    border-right: 5px solid $border-light;
+    transition: all .5s ease;
+  }
+}
+
+.our-services {
+  &.main {
+    padding-bottom: 10px;
+  }
+
+  .sidebar {
+    @media screen and (max-width: $lg) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 70px;
+    max-width: 270px;
+
+    .img-wrap {
+      margin-bottom: 40px;
+      height: 160px;
+      overflow: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .text {
+      margin-bottom: 40px;
+      font-size: em(13);
+      line-height: 1.8;
+      color: $text-light-color;
+    }
+  }
+}
+
+/* end our-services
+====================================================*/
+
+
 /* footer-main
 ====================================================*/
 .footer-main {
@@ -1041,6 +1142,7 @@ img {
     }
   }
 }
+
 
 .footer-bottom {
   position: absolute;
