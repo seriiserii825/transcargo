@@ -1426,6 +1426,11 @@ img {
     color: $text-gray;
   }
 
+  .img-wrap {
+    height: 230px;
+    overflow: hidden;
+  }
+
   .title__small {
     margin-bottom: 30px;
   }
@@ -1531,6 +1536,10 @@ img {
     height: 52px;
     border: 1px solid $border-light;
     border-right-width: 4px;
+
+    &:focus {
+      border-color: $green;
+    }
 
     @media screen and (max-width: $lg) {
         max-width: 400px;
