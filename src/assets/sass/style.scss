@@ -1437,9 +1437,6 @@ img {
 
 
 .shop {
-  .fleets-gallery {
-    margin-bottom: 100px;
-  }
 
   &.main {
     padding-bottom: 40px;
@@ -1454,6 +1451,131 @@ img {
 }
 
 /* end shop
+====================================================*/
+
+/* contacts
+====================================================*/
+.contacts-content {
+  padding: 90px 0;
+}
+
+.map {
+  min-height: 450px;
+  background: #999;
+}
+
+.contacts {
+  &.main {
+    padding-top: 0;
+  }
+}
+
+.contacts-block {
+  .title {
+    margin-bottom: 30px;
+    font-size: 1em;
+  }
+
+  .text {
+    margin-bottom: 50px;
+  }
+}
+
+.address-block {
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $border-light;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+
+    @media screen and (max-width: $lg) {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.address-list {
+  &__item {
+    display: flex;
+  }
+
+  .fa {
+    position: relative;
+    margin-right: 24px;
+    margin-bottom: 34px;
+    padding: 0 8px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border: 1px solid $border-light;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -1px;
+      right: -4px;
+      width: 4px;
+      height: 34px;
+      background: $accent;
+    }
+  }
+}
+
+.form {
+  &-group {
+    position: relative;
+    margin-bottom: 20px;
+    height: 52px;
+    border: 1px solid $border-light;
+    border-right-width: 4px;
+
+    @media screen and (max-width: $lg) {
+        max-width: 400px;
+    }
+
+    &.textarea {
+      margin-bottom: 40px;
+      padding-top: 20px;
+      height: 180px;
+    }
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    height: 100%;
+    text-indent: 20px;
+    border: none;
+    outline: none;
+  }
+
+  .fa {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+  }
+
+  .btn-wrap {
+    position: relative;
+    display: inline-block;
+    width: 270px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background: lighten($green, 5%);
+    }
+  }
+}
+/* end contacts
 ====================================================*/
 
 /* footer-main
